@@ -1,5 +1,5 @@
 # AutoBench autonomous vehicle training environment
-<img src="images/overview.PNG" align="middle" width="3000"/>
+<img src="docs/images/overview.PNG" align="middle" width="3000"/>
 
 **AutoBench** is an open-source project base on Unity ML-Agents Toolkit
 aiming to prodvide all Machine Learning researchers a simple enviornment to learn, train and validate algorithms.
