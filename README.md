@@ -10,7 +10,7 @@ Including S Curve, Straight, Parallel Parking, Reverse Parking <sup>1</sup>
  
 The default training method is using Reinforcement Learning, but I also wrote a sample code for general Machine Learning, which let users to provide the decision method.
 
-## [Task Description](Task-Description.md)
+## [Task Description](docs/Task-Description.md)
 
 ## Features
 * Algorithm base on PPO and DRQN 
