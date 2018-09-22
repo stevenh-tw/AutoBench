@@ -31,23 +31,39 @@ The default training method is using Reinforcement Learning, but I also wrote a 
 ## How To Run?
 Reinforcement Learning
 * Clone this repository
-* Download built unity instance [link](https://goo.gl/J567Df)
+* Download built unity instance [link](https://goo.gl/J567Df), to any folder you like
 * Modify parameters you desire in trainer_config.yaml->AutoBenchBrain section, or use the default value 
 * Run learn.py
-* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
+* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open unity instance (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
 
 General Machine Learning
 * Clone this repository
-* Download built unity instance [link](https://goo.gl/J567Df)
+* Download built unity instance [link](https://goo.gl/J567Df), to any folder you like
 * Implement ```def decide(brain_info: BrainInfo):``` in general_ml.py
 * Run general_ml.py
-* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
+* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open unity instance (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
 
 Inference
 * Set ```load_model = True``` Load the pre-train model
 * Set ```train_model = False``` Don't run any learning algorithm
 * Set ```fast_simulation = False``` Enable inference mode, allow you to use WASD-control Observe Camera
 * Run learn.py
+
+## Dependency
+```
+python==3.6
+
+tensorflow==1.7.1
+Pillow>=4.2.1
+matplotlib
+numpy>=1.11.0
+jupyter
+pytest>=3.2.2
+docopt
+pyyaml
+protobuf==3.5.2
+grpcio==1.11.0
+```
 
 ## References
 
@@ -70,7 +86,7 @@ Ethereum: 0x312ADcc92c3ff549001ea4437A767c512C9546E3
 
 ## Feedback
 Any feedback related to this project is recommanded post on Github
-Others, you can contact me by (karta1297963.eed02@nctu.edu.com)
+Others, you can contact me by (karta1297963.eed02@nctu.edu.tw)
 
 <sup>1</sup>Currently only has S Curve task<br> 
 <sup>2</sup>Initially I was intend to have user configurable functionallity in first release, but since ML-Agents have some bugs on Curriculum Learning, where's not an easy and elegant solution to implement this, so I decide to move this feature into future works. <br> 
