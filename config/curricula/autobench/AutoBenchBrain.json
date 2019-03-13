@@ -1,0 +1,65 @@
+{
+    "measure": "progress",
+    "thresholds": [],
+    "min_lesson_length": 0,
+    "signal_smoothing": false,
+    "parameters": {
+        "camera1_type": [
+            0
+        ],
+        "camera2_type": [
+            3
+        ],
+        "camera3_type": [
+            0
+        ],
+        "camera1_res_x": [
+            0
+        ],
+        "camera2_res_x": [
+            50
+        ],
+        "camera3_res_x": [
+            0
+        ],
+        "camera1_res_y": [
+            0
+        ],
+        "camera2_res_y": [
+            50
+        ],
+        "camera3_res_y": [
+            0
+        ],
+        "weather_id": [
+            1
+        ],
+        "time_id": [
+            9
+        ],
+        "road_width": [
+            8
+        ],
+        "forward": [
+            true
+        ],
+        "detail": [
+            false
+        ],
+        "goal_reward": [
+            500
+        ],
+        "time_penalty": [
+            -1
+        ],
+        "collision_penalty": [
+            -300
+        ],
+        "position_reward": [
+            300
+        ],
+        "velocity_reward": [
+            1
+        ]
+    }
+}

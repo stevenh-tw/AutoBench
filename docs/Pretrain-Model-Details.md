@@ -2,7 +2,7 @@
 ### Setup
 * Download the [Pretrain Model] (TBA)
 * Unzip the file
-* Copy and Paste to ```AutoBench/models``` folder
+* Copy and Paste to ```AutoBench/models``` folder (if not exist, create one)
 * Set these in ```learn_rl.py```
 ```
 run_id = 'Pretrain'
