@@ -1,81 +1,44 @@
-# AutoBench autonomous vehicle training environment
+# AutoBench - Autonomous vehicle training and benchmark environment with configurable difficulty
 <img src="docs/images/overview.PNG" align="middle" width="3000"/>
 
-**AutoBench** is an open-source project base on Unity ML-Agents Toolkit
-aiming to prodvide all Machine Learning researchers a simple enviornment to learn, train and validate algorithms.
+**AutoBench** is an open-source project base on [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-agents) featuring high configurability including difficulty, rewards, weather conditions, and visual observation types. Using **REAL** driving license exam in Taiwan as an example to showcase the applicability of autonomous vehicle in reinforcement learning approach with configurable difficulty technique.
 
-For sufficient validity, the task environments are base on REAL driving license exam in Taiwan.
+Environment supports: 
+* General Machine Learning - letting the user implement their own decide algorithm within the out-of-the-box standard training loop. 
+* Reinforcement Learning - Containing the entire RL training loop, based on part of ML-Agents trainer with built-in [Proximal Policy Algorithm](https://arxiv.org/abs/1707.06347) algorithm, and recurrent support using [DRQN](https://arxiv.org/abs/1507.06527)
 
-Including S Curve, Straight, Parallel Parking, Reverse Parking <sup>1</sup>
- 
-The default training method is using Reinforcement Learning, but I also wrote a sample code for general Machine Learning, which let users to provide the decision method.
+* OpenAI Gym Compatible -  Based on Gym-Unity wrapper, that supports OpenAI Gym interface for further integration meaning users are able to test any Gym-compatible algorithms within AutoBench. [Limitation](docs/Training-Process.md#openai-gym-compitable)
 
-## [Task Description](docs/Task-Description.md)
+* Benchmark Mode - Complement for above every training mode, ```BenchmarkManager``` is a static class handling benchmark tracking and analysis. Sample code can be found in ```learn_ml.py``` and ```learn_rl.py```
+
 
 ## Features
-* Algorithm base on PPO and DRQN 
-* Support for multiple environment configurations and training scenarios
-* Integrate [Image Synthesis plugin](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis) for pre-segmentation feature
-* Add WASD-control Observe Camera in inference mode
+* Road Geometry based on real license exam.
+* Support Reinforcement learning, General machine learning, and OpenAI Gym interface. [(learn more)](docs/Training-Process.md)
+* Configurable Difficulty through Road Width, Visual Details and Image types. [(learn more)](docs/Training-and-Environment-Configuration.md)
+* Various Visual Observation Types support. [(learn more)](docs/ML-ImageSynthesis.md)
+* WASD-control Observation Camera in inference mode
+* Configurable Weather Conditions, Time of the Day. [(learn more)](docs/Training-and-Environment-Configuration.md#weather-and-time)
+* Configurable Rewards for reward shaping [(learn more)](docs/AgentInfos-Obs-Action-Reward.md#rewards)
+* Out-of-the-box Benchmark system [(learn more)](docs/Benchmark.md)
+* A Pre-train model [(learn more)](docs/Pretrain-Model-Details.md)
 
 (future work)
-* Add pre-train model for SCurve Forward
-* Configurable weather condition
-* Configurable road spec(curvature, bumpiness, width)
+* More configurable road spec (curvature, bumpiness)
+* More tasks (parallel parking, reverse parking)
 * Configurable agent amount
-* Configurable reward <sup>2</sup>
-* Fully automative benchmark process
-* Whole set of other tasks (parallel parking, reverse parking, etc.)
-* Integreate all scene into single instance, let users to specify config in python command line.
 
-## How To Run?
-Reinforcement Learning
-* Clone this repository
-* Download built unity instance [link](https://goo.gl/J567Df), to any folder you like
-* Modify parameters you desire in trainer_config.yaml->AutoBenchBrain section, or use the default value 
-* Run learn.py
-* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open unity instance (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
-
-General Machine Learning
-* Clone this repository
-* Download built unity instance [link](https://goo.gl/J567Df), to any folder you like
-* Implement ```def decide(brain_info: BrainInfo):``` in general_ml.py
-* Run general_ml.py
-* After seeing ```Start training by pressing the Play button in the Unity Editor.```, open unity instance (for example) SCurve_Forward_Simple_Segment.exe in SCurve_Forward_Simple_Segment folder
-
-Inference
-* Set ```load_model = True``` Load the pre-train model
-* Set ```train_model = False``` Don't run any learning algorithm
-* Set ```fast_simulation = False``` Enable inference mode, allow you to use WASD-control Observe Camera
-* Run learn.py
-
-## Dependency
-```
-python==3.6
-
-tensorflow==1.7.1
-Pillow>=4.2.1
-matplotlib
-numpy>=1.11.0
-jupyter
-pytest>=3.2.2
-docopt
-pyyaml
-protobuf==3.5.2
-grpcio==1.11.0
-```
+## -> Tutorial and Documentation <-
+More info about the [Tutorial and Documentation](docs/)
 
 ## References
-
-- [Unity ML-Agent Repository](https://github.com/Unity-Technologies/ml-agents)
+- [Unity ML-Agents Repository](https://github.com/Unity-Technologies/ml-agents)
+- [ML-ImageSynthesis Repository](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis) 
 - [Proximal Policy Algorithm](https://arxiv.org/abs/1707.06347)
 - [Deep Recurrent Q-Learning for Partially Observable MDPs](https://arxiv.org/abs/1507.06527)
 
-## FAQ
-
-### Can you provide the Unity enviroenmt source code?
-
-No, because this project involves lots of asset that came from the Unity Asset Store, according to their EULA, I can only provide the built instance of the environment.
+## Citation
+Paper Citation (TBA)
 
 ## License
 [Apache License 2.0](LICENSE)
@@ -85,8 +48,4 @@ Bitcoin: 1ErZXAEoQVzFSkarXKpxfTRzYrp9SALVp2<br>
 Ethereum: 0x312ADcc92c3ff549001ea4437A767c512C9546E3
 
 ## Feedback
-Any feedback related to this project is recommanded post on Github
-Others, you can contact me by (karta1297963.eed02@nctu.edu.tw)
-
-<sup>1</sup>Currently only has S Curve task<br> 
-<sup>2</sup>Initially I was intend to have user configurable functionallity in first release, but since ML-Agents have some bugs on Curriculum Learning, where's not an easy and elegant solution to implement this, so I decide to move this feature into future works. <br> 
+Feel free to give us feedback using the "Issue" section
