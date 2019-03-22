@@ -1,8 +1,8 @@
 # Pretrain Model Details
 ### Setup
-* Download the [Pretrain Model] (TBA)
+* Download the [Pretrain Model](https://goo.gl/HunBMB)
 * Unzip the file
-* Copy and Paste to ```AutoBench/models``` folder (if not exist, create one)
+* Copy and Paste ```Pretrain``` folder under the ```AutoBench/models``` folder (if not exist, create one)
 * Set these in ```learn_rl.py```
 ```
 run_id = 'Pretrain'
@@ -15,6 +15,10 @@ load_model = True
 The architecture follows the standard [PPO](https://arxiv.org/abs/1707.06347) implementation with the following modification.
 * Adding Convolutional Neural Networks (CNN) as a visual encoder
 * Adding Long Short Term Memory (LSTM) layer after the concatenation of visual and vector latent features layer to implement recurrent functionality in [Deep Recurrent Q-Network]().
+
+### Tesorboard
+<img src="images/tensorboard1.PNG" align="middle" width="3000"/>
+<img src="images/tensorboard2.PNG" align="middle" width="3000"/>
 
 ### Difficulty and Agents Settings
 The following settings are the training configuration of this pre-train baseline 
