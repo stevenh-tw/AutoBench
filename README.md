@@ -1,6 +1,8 @@
 # AutoBench - Autonomous vehicle training and benchmark environment with configurable difficulty
 <img src="docs/images/overview.PNG" align="middle" width="3000"/>
 
+[![AutoBench Video](docs/images/thumbnail.jpg)](https://www.youtube.com/watch?v=Ptg1hnLxy9U)
+
 **AutoBench** is an open-source project base on [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-agents) featuring high configurability including difficulty, rewards, weather conditions, and visual observation types. Using **REAL** driving license exam in Taiwan as an example to showcase the applicability of autonomous vehicle in reinforcement learning approach with configurable difficulty technique.
 
 Environment supports: 

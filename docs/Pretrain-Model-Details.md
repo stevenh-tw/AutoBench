@@ -10,7 +10,7 @@ load_model = True
 ``` 
 
 ### Architecture
-<img src="images/architecture.jpg" align="middle" width="3000"/>
+<img src="images/architecture.png" align="middle" width="3000"/>
 
 The architecture follows the standard [PPO](https://arxiv.org/abs/1707.06347) implementation with the following modification.
 * Adding Convolutional Neural Networks (CNN) as a visual encoder
