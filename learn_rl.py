@@ -1,5 +1,5 @@
 import json
-from trainer_controller import TrainerController
+from mlagents.trainers.trainer_controller import TrainerController
 
 
 def extract_camera_config(config_file):
